@@ -19,6 +19,6 @@ app.all("*", (req, res) => {
   res.status(404).send("page not found");
 });
 // 8kHCqGjYF0tCCQ8M
-app.listen(3000, () => {
+app.listen(process.env.PORT, () => {
   console.log("server started");
 });
