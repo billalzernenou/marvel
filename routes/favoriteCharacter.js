@@ -36,7 +36,9 @@ router.post("/character/add", async (req, res) => {
 });
 router.get("/characters/favorites", async (req, res) => {
   try {
-    const favoriteCharacters = await favoriteCharacter.find();
+    const favoriteCharacters = await favoriteCharacter.find({
+      user: req.query.user,
+    });
     res.json(favoriteCharacters);
   } catch (error) {
     response.status(400).json(message.error);
